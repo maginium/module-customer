@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Define columns for customer listing -->
+    <columns class="Magento\Customer\Ui\Component\Listing\Columns" name="customer_columns">
+        <settings>
+            <!-- Set default action parameters for fieldAction -->
+            <childDefaults>
+                <param xsi:type="array" name="fieldAction">
+                    <item xsi:type="string" name="provider">customer_listing.customer_listing.customer_columns.actions</item>
+                    <item xsi:type="string" name="target">applyAction</item>
+                    <item xsi:type="array" name="params">
+                        <item xsi:type="string" name="0">edit</item>
+                        <item xsi:type="string" name="1">${ $.$data.rowIndex }</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+        <!-- Define column for billing telephone -->
+        <column name="billing_telephone">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <item xsi:type="string" name="filter">text</item>
+                    <item xsi:type="string" name="editor">text</item>
+                    <item xsi:type="string" name="label" translate="true" />
+                    <item xsi:type="number" name="sortOrder">60</item>
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+        <!-- Define column for billing company -->
+        <column name="billing_company">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+        <!-- Define column for billing fax -->
+        <column name="billing_fax">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+        <!-- Define column for taxvat -->
+        <column name="taxvat">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+        <!-- Define column for billing vat id -->
+        <column name="billing_vat_id">
+            <argument xsi:type="array" name="data">
+                <item xsi:type="array" name="config">
+                    <item xsi:type="boolean" name="componentDisabled">true</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

@@ -1,0 +1,153 @@
+<?xml version="1.0" ?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd"
+>
+    <!-- Customer Emails -->
+    <template
+        area="frontend"
+        file="new_account.html"
+        id="enhanced_email_templates_customer_new_account"
+        label="Customer New Account"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="reset_password.html"
+        id="enhanced_email_templates_reset_password"
+        label="Customer Reset Password"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="change_email.html"
+        id="enhanced_email_templates_customer_change_email"
+        label="Customer Change Email"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="password_new.html"
+        id="enhanced_email_templates_customer_password_remind"
+        label="Customer Remind Password"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="account_new_confirmed.html"
+        id="enhanced_email_templates_customer_new_account_confirmed"
+        label="Customer New Account Confirmed"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="change_email_and_password.html"
+        id="enhanced_email_templates_customer_change_email_pass"
+        label="Customer Change Email and Password"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="password_forgot_email.html"
+        id="enhanced_email_templates_customer_password_forgot_email"
+        label="Customer Forgot Password"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="account_new_no_password.html"
+        id="enhanced_email_templates_customer_new_account_no_password"
+        label="Customer New Account Without Password"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="account_new_confirmation.html"
+        id="enhanced_email_templates_customer_new_account_confirmation"
+        label="Customer New Account Confirmation Key"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+
+    <!-- RTL Customer Emails -->
+    <template
+        area="frontend"
+        file="rtl/new_account.html"
+        id="enhanced_email_templates_customer_new_account_rtl"
+        label="Customer New Account - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/reset_password.html"
+        id="enhanced_email_templates_reset_password_rtl"
+        label="Customer Reset Password - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/change_email.html"
+        id="enhanced_email_templates_customer_change_email_rtl"
+        label="Customer Change Email - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/password_new.html"
+        id="enhanced_email_templates_customer_password_remind_rtl"
+        label="Customer Remind Password - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/account_new_confirmed.html"
+        id="enhanced_email_templates_customer_new_account_confirmed_rtl"
+        label="Customer New Account Confirmed - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/change_email_and_password.html"
+        id="enhanced_email_templates_customer_change_email_pass_rtl"
+        label="Customer Change Email and Password - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/password_forgot_email.html"
+        id="enhanced_email_templates_customer_password_forgot_email_rtl"
+        label="Customer Forgot Password - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/account_new_no_password.html"
+        id="enhanced_email_templates_customer_new_account_no_password_rtl"
+        label="Customer New Account Without Password - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+    <template
+        area="frontend"
+        file="rtl/account_new_confirmation.html"
+        id="enhanced_email_templates_customer_new_account_confirmation_rtl"
+        label="Customer New Account Confirmation Key - RTL"
+        module="Maginium_CustomerAuth"
+        type="html"
+    />
+</config>

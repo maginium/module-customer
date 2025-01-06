@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!-- Update the "Customers" group title, setting its sort order and resource permissions -->
+        <update
+            id="Magento_Customer::group_title"
+            module="Magento_Customer"
+            parent="Magento_Customer::customer"
+            resource="Magento_Customer::customer"
+            sortOrder="10"
+            title="Customers"
+        />
+
+        <!-- Update the "All Customers" menu item, with title translation and backend action -->
+        <update
+            action="customer/index/"
+            id="Magento_Customer::customer_manage"
+            module="Magento_Customer"
+            parent="Magento_Customer::group_title"
+            resource="Magento_Customer::manage"
+            sortOrder="10"
+            title="All Customers"
+            translate="title"
+        />
+
+        <!-- Update the "Customer Groups" menu item under the Customers group -->
+        <update
+            action="customer/group"
+            id="Magento_Customer::customer_group"
+            module="Magento_Customer"
+            parent="Magento_Customer::group_title"
+            resource="Magento_Customer::group"
+            sortOrder="20"
+            title="Customer Groups"
+            translate="title"
+        />
+
+        <!-- Add a "Login as Customer Log" menu item, visible only when a specific config is enabled -->
+        <update
+            action="loginascustomer_log/log/index"
+            dependsOnConfig="login_as_customer/general/enabled"
+            id="Magento_LoginAsCustomerLog::login_log"
+            module="Magento_LoginAsCustomerLog"
+            parent="Magento_Customer::group_title"
+            resource="Magento_LoginAsCustomerLog::login_log"
+            sortOrder="40"
+            title="Login as Customer Log"
+        />
+    </menu>
+</config>

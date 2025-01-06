@@ -1,0 +1,39 @@
+.collectionimage {
+  display: flex;
+  min-width: 100%;
+  padding: 5px;
+}
+.collectionimage-col {
+  position: relative;
+  min-height: 330px;
+  width: 100%;
+}
+.collectionimage-col img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+}
+.collectiondetail {
+  width: 49%;
+  padding: 48px 32px 0 16px;
+}
+.wrapper {
+  direction: rtl;
+  text-align: right;
+}
+.maginium-mail-link:hover {
+  color: #3a8dfe !important;
+}
+table tbody tr a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+table tbody tr a:visited {
+  color: inherit !important;
+  text-decoration: none !important;
+}

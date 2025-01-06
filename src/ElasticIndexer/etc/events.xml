@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Event: customer_load_after -->
+    <event name="customer_load_after">
+        <!-- Subsciber for the "customer_load_after" event -->
+        <observer instance="Maginium\CustomerElasticIndexer\Observers\CustomerIndexer" name="customer_load_after" />
+    </event>
+
+    <!-- Event: customer_save_after -->
+    <event name="customer_save_after">
+        <!-- Subsciber for the "customer_save_after" event -->
+        <observer instance="Maginium\CustomerElasticIndexer\Observers\CustomerIndexer" name="customer_save_after" />
+    </event>
+
+    <!-- Event: customer_delete_after -->
+    <event name="customer_delete_after">
+        <!-- Subsciber for the "customer_delete_after" event -->
+        <observer instance="Maginium\CustomerElasticIndexer\Observers\CustomerIndexer" name="customer_delete_after" />
+    </event>
+
+    <!-- Event: customer_mass_delete_after -->
+    <event name="customer_mass_delete_after">
+        <!-- Subsciber for the "customer_mass_delete_after" event -->
+        <observer instance="Maginium\CustomerElasticIndexer\Observers\CustomerIndexer" name="customer_mass_delete_after" />
+    </event>
+
+    <!-- Event: customer_duplicate -->
+    <event name="customer_duplicate">
+        <!-- Subsciber for the "customer_duplicate" event -->
+        <observer instance="Maginium\CustomerElasticIndexer\Observers\CustomerIndexer" name="customer_duplicate" />
+    </event>
+
+    <!-- Event: customer_mass_update_status_after -->
+    <event name="customer_mass_update_status_after">
+        <!-- Subsciber for the "customer_mass_update_status_after" event -->
+        <observer instance="Maginium\CustomerElasticIndexer\Observers\CustomerIndexer" name="customer_mass_update_status_after" />
+    </event>
+
+    <!-- Event: customer_mass_duplicate_after -->
+    <event name="customer_mass_duplicate_after">
+        <!-- Subsciber for the "customer_mass_duplicate_after" event -->
+        <observer instance="Maginium\CustomerElasticIndexer\Observers\CustomerIndexer" name="customer_mass_duplicate_after" />
+    </event>
+</config>

@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- Define a custom tab in the admin configuration -->
+        <tab class="customer-tab" id="customer" sortOrder="70" translate="label">
+            <!-- Label for the Customers tab -->
+            <label>Customers</label>
+        </tab>
+
+        <!-- Add a section for general customer settings -->
+        <section id="customer" sortOrder="10">
+            <!-- Label for the general settings section -->
+            <label>General</label>
+
+            <!-- Define a hidden group for online customers -->
+            <group id="online_customers" showInDefault="0" showInStore="0" showInWebsite="0" />
+
+            <!-- Define a group for customer avatar settings -->
+            <group id="avatar" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="100" translate="label" type="text">
+                <!-- Label for the avatar group -->
+                <label>Customer Avatar</label>
+
+                <!-- Define a field for font color configuration -->
+                <field
+                    canRestore="1"
+                    id="font_color"
+                    showInDefault="1"
+                    showInStore="1"
+                    showInWebsite="1"
+                    sortOrder="10"
+                    translate="label"
+                    type="text"
+                >
+                    <!-- Label for font color field -->
+                    <label>Font Color</label>
+
+                    <!-- Validation rules for font color -->
+                    <validate>color {required:false, hash:true}</validate>
+
+                    <!-- Frontend model for font color -->
+                    <frontend_model>Maginium\Foundation\Models\Config\Frontend\Color</frontend_model>
+                </field>
+
+                <!-- Define a field for background color configuration -->
+                <field
+                    canRestore="1"
+                    id="background_color"
+                    showInDefault="1"
+                    showInStore="1"
+                    showInWebsite="1"
+                    sortOrder="20"
+                    translate="label"
+                    type="text"
+                >
+                    <!-- Label for background color field -->
+                    <label>Background Color</label>
+
+                    <!-- Validation rules for background color -->
+                    <validate>color {required:false, hash:true}</validate>
+
+                    <!-- Frontend model for background color -->
+                    <frontend_model>Maginium\Foundation\Models\Config\Frontend\Color</frontend_model>
+                </field>
+
+                <!-- Define a field for avatar size configuration -->
+                <field canRestore="1" id="size" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label" type="text">
+                    <!-- Label for avatar size field -->
+                    <label>Size</label>
+
+                    <!-- Comment explaining size value format -->
+                    <comment>Add size in pixels. e.g. 100</comment>
+                </field>
+            </group>
+
+            <!-- Define a group for registration options -->
+            <group id="registration_options" showInDefault="10" showInStore="1" showInWebsite="1" sortOrder="95" translate="label">
+                <label>Registration Options</label>
+                <field canRestore="1" id="prefix_show" showInDefault="1" showInWebsite="1" sortOrder="20" translate="label comment" type="select">
+                    <label>Show Prefix</label>
+                    <source_model>Magento\Config\Model\Config\Source\Nooptreq</source_model>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Show\Address</backend_model>
+                    <comment>The title that goes before name (Mr., Mrs., etc.)</comment>
+                </field>
+                <field canRestore="1" id="prefix_options" showInDefault="1" showInWebsite="1" sortOrder="30" translate="label comment">
+                    <label>Prefix Dropdown Options</label>
+                    <comment>
+                        <![CDATA[Semicolon (;) separated values.<br/>Leave empty for open text field.]]>
+                    </comment>
+                </field>
+                <field canRestore="1" id="middlename_show" showInDefault="1" showInWebsite="1" sortOrder="40" translate="label comment" type="select">
+                    <label>Show Middle Name (initial)</label>
+                    <frontend_class>on-off-trigger</frontend_class>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Always optional.</comment>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Show\Address</backend_model>
+                </field>
+                <field canRestore="1" id="suffix_show" showInDefault="1" showInWebsite="1" sortOrder="50" translate="label comment" type="select">
+                    <label>Show Suffix</label>
+                    <source_model>Magento\Config\Model\Config\Source\Nooptreq</source_model>
+                    <comment>The suffix that goes after name (Jr., Sr., etc.)</comment>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Show\Address</backend_model>
+                </field>
+                <field canRestore="1" id="suffix_options" showInDefault="1" showInWebsite="1" sortOrder="60" translate="label comment">
+                    <label>Suffix Dropdown Options</label>
+                    <comment>
+                        <![CDATA[Semicolon (;) separated values.<br/>Leave empty for open text field.]]>
+                    </comment>
+                </field>
+                <field canRestore="1" id="dob_show" showInDefault="1" showInWebsite="1" sortOrder="70" translate="label" type="select">
+                    <label>Show Date of Birth</label>
+                    <source_model>Magento\Config\Model\Config\Source\Nooptreq</source_model>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Show\Customer</backend_model>
+                </field>
+                <field canRestore="1" id="gender_show" showInDefault="1" showInWebsite="1" sortOrder="90" translate="label" type="select">
+                    <label>Show Gender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Nooptreq</source_model>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Show\Customer</backend_model>
+                </field>
+                <field canRestore="1" id="telephone_show" showInDefault="1" showInWebsite="1" sortOrder="100" translate="label" type="select">
+                    <label>Show Telephone</label>
+                    <source_model>Magento\Config\Model\Config\Source\Nooptreq</source_model>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Show\AddressOnly</backend_model>
+                </field>
+            </group>
+
+            <!-- Define additional groups for account creation, password management, startup settings, etc. -->
+            <group id="create_account">
+                <!-- Auto group assignment configuration -->
+                <field canRestore="1" id="auto_group_assign">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+                <field canRestore="1" id="viv_disable_auto_group_assign_default" showInDefault="0" showInStore="0" showInWebsite="0">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+                <field canRestore="1" id="vat_frontend_visibility" showInDefault="0" showInStore="0" showInWebsite="0">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+                <field canRestore="1" id="email_required_create_order">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+                <field canRestore="1" id="confirm">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+                <field canRestore="1" id="generate_human_friendly_id" showInDefault="0" showInStore="0" showInWebsite="0">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <group id="password">
+                <!-- Storefront autocomplete configuration -->
+                <field canRestore="1" id="autocomplete_on_storefront" showInDefault="0" showInStore="0" showInWebsite="0">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <group id="startup">
+                <!-- Redirect dashboard configuration -->
+                <field canRestore="1" id="redirect_dashboard" showInDefault="0" showInStore="0" showInWebsite="0">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <group id="address">
+                <!-- Middle name display configuration -->
+                <field id="middlename_show">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+
+            <group id="captcha">
+                <!-- Captcha settings -->
+                <field id="enable">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+                <field id="case_sensitive">
+                    <frontend_class>on-off-trigger</frontend_class>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

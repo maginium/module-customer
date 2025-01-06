@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define a plugin for the Magento\Config\Model\Config\Source\Email\Template class. -->
+    <type name="Magento\Config\Model\Config\Source\Email\Template">
+        <plugin disabled="false" name="customer_auth_email_templates" sortOrder="20" type="Maginium\CustomerAuth\Interceptors\Email\TemplatePlugin" />
+    </type>
+</config>

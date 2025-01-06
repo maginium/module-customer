@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Route for checking a customer by email -->
+    <route method="POST" url="/V2/customer/check">
+        <service class="Maginium\CustomerAuth\Interfaces\CheckInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for verifying a customer by email or phone -->
+    <route method="POST" url="/V2/customer/verify">
+        <service class="Maginium\CustomerAuth\Interfaces\VerifyInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for register new customer -->
+    <route method="POST" url="/V2/customer/register">
+        <service class="Maginium\CustomerAuth\Interfaces\RegisterInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for update new customer -->
+    <route method="PUT" url="/V2/customer/update">
+        <service class="Maginium\CustomerAuth\Interfaces\UpdateInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for retrieving a customer by ID -->
+    <route method="POST" url="/V2/customer/login">
+        <service class="Maginium\CustomerAuth\Interfaces\LoginInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for retrieving a customer by ID -->
+    <route method="POST" url="/V2/customer/logout">
+        <service class="Maginium\CustomerAuth\Interfaces\LogoutInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+        <data>
+            <parameter force="true" name="customerId">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <!-- Route for sending customer reset password -->
+    <route method="POST" url="/V2/customer/password/forget">
+        <service class="Maginium\CustomerAuth\Interfaces\ForgetPasswordInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for resetting customer password -->
+    <route method="POST" url="/V2/customer/password/reset">
+        <service class="Maginium\CustomerAuth\Interfaces\ResetPasswordInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

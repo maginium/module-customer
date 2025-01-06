@@ -1,0 +1,94 @@
+{
+  "name": "maginium/module-customer",
+  "description": "Maginium Customer module for Magento 2. Provides utilities and integrations for customer management and extensions.",
+  "type": "magento2-module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Maginium",
+      "role": "Technical Support",
+      "email": "support@maginium.com",
+      "homepage": "https://www.maginium.com"
+    }
+  ],
+  "homepage": "https://www.maginium.com",
+  "support": {
+    "issues": "https://www.maginium.com/issues",
+    "source": "https://github.com/maginium/module-customer",
+    "email": "support@maginium.com",
+    "docs": "https://docs.maginium.com/customer"
+  },
+  "keywords": [
+    "customer",
+    "magento",
+    "magento2",
+    "maginium",
+    "ecommerce",
+    "extensions",
+    "management"
+  ],
+  "prefer-stable": true,
+  "minimum-stability": "stable",
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=8.2",
+    "magento/module-customer": "*",
+    "maginium/module-framework": "*",
+    "maginium/module-foundation": "*",
+    "maginium/module-elastic-indexer": "*"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.5",
+    "phpunit/phpunit": "^10.3"
+  },
+  "autoload": {
+    "files": [
+      "src/Api/registration.php",
+      "src/Core/registration.php",
+      "src/Auth/registration.php",
+      "src/ElasticIndexer/registration.php"
+    ],
+    "psr-4": {
+      "Maginium\\Customer\\": "/src/Core",
+      "Maginium\\CustomerApi\\": "/src/Api",
+      "Maginium\\CustomerAuth\\": "/src/Auth",
+      "Maginium\\CustomerElasticIndexer\\": "/src/ElasticIndexer"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Maginium\\Customer\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [],
+    "post-update-cmd": [],
+    "lint": [],
+    "test": [
+      "phpunit --stop-on-failure"
+    ],
+    "bench": [
+      "phpbench run tests\\Benchmark\\ --report=default"
+    ]
+  },
+  "extra": {
+    "magento-version": ">=2.4",
+    "classmap-authoritative": true,
+    "patches": {
+      "magento/framework": {}
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/.github",
+      "/.gitignore",
+      "/composer.lock",
+      "/phpunit.xml"
+    ]
+  }
+}

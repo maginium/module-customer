@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <!-- Define extension attributes for Magento Customer Interface -->
+    <extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
+        <!-- Define 'phone' attribute of type string -->
+        <attribute code="mobile_number" type="string" />
+        <!-- Define 'color_preference' attribute of type string -->
+        <attribute code="color_preference" type="string" />
+        <!-- Define 'contact_preference' attribute of type string -->
+        <attribute code="contact_preference" type="string" />
+    </extension_attributes>
+</config>

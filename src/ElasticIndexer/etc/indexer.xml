@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <!-- Defines the 'customers' indexer and links it to the 'Fulltext' model. -->
+    <indexer class="Maginium\CustomerElasticIndexer\Models\Indexer\Fulltext" id="customers" view_id="customers">
+        <!-- Title for the indexer, supports translation. -->
+        <title translate="true">Customers</title>
+
+        <!-- Description for the indexer, supports translation. -->
+        <description
+            translate="true"
+        >Responsible for reindexing customer data into the ElasticSearch index for optimized search and retrieval performance.</description>
+    </indexer>
+</config>

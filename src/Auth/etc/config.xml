@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <!-- Customer Create Account -->
+        <customer>
+            <create_account>
+                <email_template>enhanced_email_templates_customer_new_account</email_template>
+                <email_confirmed_template>enhanced_email_templates_customer_new_account_confirmed</email_confirmed_template>
+                <email_no_password_template>enhanced_email_templates_customer_new_account_no_password</email_no_password_template>
+                <email_confirmation_template>enhanced_email_templates_customer_new_account_confirmation</email_confirmation_template>
+            </create_account>
+        </customer>
+
+        <!-- Customer Password -->
+        <customer>
+            <password>
+                <reset_password_template>enhanced_email_templates_reset_password</reset_password_template>
+                <remind_email_template>enhanced_email_templates_customer_password_remind</remind_email_template>
+                <forgot_email_template>enhanced_email_templates_customer_password_forgot_email</forgot_email_template>
+            </password>
+        </customer>
+
+        <!-- Customer Account Information -->
+        <customer>
+            <account_information>
+                <change_email_template>enhanced_email_templates_customer_change_email</change_email_template>
+                <change_email_and_password_template>enhanced_email_templates_customer_change_email_pass</change_email_and_password_template>
+            </account_information>
+        </customer>
+    </default>
+
+    <!-- Configuration for specific store 'ar_sa' -->
+    <stores>
+        <ar_sa>
+            <customer>
+                <!-- Customer Create Account -->
+                <create_account>
+                    <email_template>enhanced_email_templates_customer_new_account_rtl</email_template>
+                    <email_confirmed_template>enhanced_email_templates_customer_new_account_confirmed_rtl</email_confirmed_template>
+                    <email_no_password_template>enhanced_email_templates_customer_new_account_no_password_rtl</email_no_password_template>
+                    <email_confirmation_template>enhanced_email_templates_customer_new_account_confirmation_rtl</email_confirmation_template>
+                </create_account>
+
+                <!-- Customer Password -->
+                <password>
+                    <reset_password_template>enhanced_email_templates_reset_password_rtl</reset_password_template>
+                    <remind_email_template>enhanced_email_templates_customer_password_remind_rtl</remind_email_template>
+                    <forgot_email_template>enhanced_email_templates_customer_password_forgot_email_rtl</forgot_email_template>
+                </password>
+
+                <!-- Customer Account Information -->
+                <account_information>
+                    <change_email_template>enhanced_email_templates_customer_change_email_rtl</change_email_template>
+                    <change_email_and_password_template>enhanced_email_templates_customer_change_email_pass_rtl</change_email_and_password_template>
+                </account_information>
+            </customer>
+        </ar_sa>
+    </stores>
+</config>

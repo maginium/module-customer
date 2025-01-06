@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <!-- Defines the view for the 'customers' indexer, linking it to the Fulltext model class. -->
+    <view class="Maginium\CustomerElasticIndexer\Models\Indexer\Fulltext" group="indexer" id="customers">
+        <!-- Defines the subscriptions for the 'customers' indexer. -->
+        <subscriptions>
+            <!-- Subscribes to the 'customers' table, using the 'customer_id' column to track changes. -->
+            <table entity_column="customer_id" name="customers" />
+        </subscriptions>
+    </view>
+</config>

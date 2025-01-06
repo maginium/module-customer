@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Customer Data Events -->
+    <event name="customer_data_object_login">
+        <!-- Observer to bind the customer login data to the visitor -->
+        <observer instance="Magento\Customer\Observer\Visitor\BindCustomerLoginObserver" name="customer_visitor" />
+
+        <!-- Observer to handle tax-related actions when a customer logs in -->
+        <observer instance="Magento\Tax\Observer\CustomerLoggedInObserver" name="customer_tax_logged_in" />
+
+        <!-- Observer to synchronize persistent customer data on login -->
+        <observer instance="Magento\Persistent\Observer\SynchronizePersistentOnLoginObserver" name="persistent" />
+    </event>
+
+    <event name="customer_login">
+        <!-- Observer to bind customer login to catalog actions (e.g., compare products) -->
+        <observer instance="Magento\Catalog\Observer\Compare\BindCustomerLoginObserver" name="catalog" shared="false" />
+
+        <!-- Observer to load the customer quote during checkout when a customer logs in -->
+        <observer instance="Magento\Checkout\Observer\LoadCustomerQuoteObserver" name="loadCustomerQuote" />
+
+        <!-- Observer for generating reports when a customer logs in -->
+        <observer instance="Magento\Reports\Observer\CustomerLoginObserver" name="reports" />
+
+        <!-- Observer to manage wishlist behavior during customer login -->
+        <observer instance="Magento\Wishlist\Observer\CustomerLogin" name="wishlist" />
+    </event>
+
+    <event name="customer_logout">
+        <!-- Observer to bind the customer logout data to the visitor -->
+        <observer instance="Magento\Customer\Observer\Visitor\BindCustomerLogoutObserver" name="customer_visitor" />
+
+        <!-- Observer to log the last logout time of the customer -->
+        <observer instance="Magento\Customer\Observer\LogLastLogoutAtObserver" name="customer_log_logout" />
+
+        <!-- Observer to bind customer logout to catalog actions (e.g., compare products) -->
+        <observer instance="Magento\Catalog\Observer\Compare\BindCustomerLogoutObserver" name="catalog" shared="false" />
+
+        <!-- Observer to unset all checkout-related data when a customer logs out -->
+        <observer instance="Magento\Checkout\Observer\UnsetAllObserver" name="unsetAll" />
+
+        <!-- Observer for generating reports when a customer logs out -->
+        <observer instance="Magento\Reports\Observer\CustomerLogoutObserver" name="reports" />
+
+        <!-- Observer to manage wishlist behavior during customer logout -->
+        <observer instance="Magento\Wishlist\Observer\CustomerLogout" name="wishlist" />
+
+        <!-- Observer to synchronize persistent customer data on logout -->
+        <observer instance="Magento\Persistent\Observer\SynchronizePersistentOnLogoutObserver" name="persistent" />
+    </event>
+
+    <!-- Custom Authentication Events -->
+    <event name="customer_authentication_before">
+        <!-- Custom observer to initialize the customer data by request before authentication -->
+        <observer instance="Maginium\CustomerAuth\Observers\Visitor\InitByRequestObserver" name="visitor_init_by_request" />
+    </event>
+
+    <event name="customer_authenticated">
+        <!-- Observer to handle customer password upgrade after successful authentication -->
+        <observer instance="Magento\Customer\Observer\UpgradeCustomerPasswordObserver" name="customer_password" />
+
+        <!-- Observer to trigger actions when a customer login is successful -->
+        <observer instance="Magento\Customer\Observer\CustomerLoginSuccessObserver" name="customer_unlock" />
+
+        <!-- Observer for customer group authentication validation -->
+        <observer instance="Magento\Customer\Observer\CustomerGroupAuthenticate" name="customerGroupAuthenticate" />
+
+        <!-- Observer to reset captcha attempt after customer authentication -->
+        <observer instance="Magento\Captcha\Observer\ResetAttemptForFrontendObserver" name="captcha_reset_attempt" />
+    </event>
+
+    <event name="customer_authentication_after">
+        <!-- Custom observer to save customer data after authentication -->
+        <observer instance="Magento\Customer\Observer\Visitor\SaveByRequestObserver" name="visitor_save_by_request" />
+    </event>
+</config>

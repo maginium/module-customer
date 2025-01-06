@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Set a preference for the specified interface CheckInterface to use the class Check. -->
+    <preference for="Maginium\CustomerAuth\Interfaces\CheckInterface" type="Maginium\CustomerAuth\Actions\Check" />
+
+    <!-- Set a preference for the specified interface VerifyInterface to use the class Verify. -->
+    <preference for="Maginium\CustomerAuth\Interfaces\VerifyInterface" type="Maginium\CustomerAuth\Actions\Verify" />
+
+    <!-- Set a preference for the specified interface LoginInterface to use the class Login. -->
+    <preference for="Maginium\CustomerAuth\Interfaces\LoginInterface" type="Maginium\CustomerAuth\Actions\Login" />
+
+    <!-- Set a preference for the specified interface RegisterInterface to use the class Register. -->
+    <preference for="Maginium\CustomerAuth\Interfaces\RegisterInterface" type="Maginium\CustomerAuth\Actions\Register" />
+
+    <!-- Set a preference for the specified interface LogoutInterface to use the class Logout. -->
+    <preference for="Maginium\CustomerAuth\Interfaces\LogoutInterface" type="Maginium\CustomerAuth\Actions\Logout" />
+
+    <!-- Set a preference for the specified interface ForgetPasswordInterface to use the class ForgetPassword. -->
+    <preference for="Maginium\CustomerAuth\Interfaces\ForgetPasswordInterface" type="Maginium\CustomerAuth\Actions\ForgetPassword" />
+
+    <!-- Set a preference for the specified interface ResetPasswordInterface to use the class ResetPassword. -->
+    <preference for="Maginium\CustomerAuth\Interfaces\ResetPasswordInterface" type="Maginium\CustomerAuth\Actions\ResetPassword" />
+
+    <type name="Magento\Customer\Model\AccountManagement">
+        <plugin name="webapi_security_check_customer_password_reset_attempt" type="Maginium\CustomerAuth\Interceptors\AccountManagement" />
+    </type>
+</config>

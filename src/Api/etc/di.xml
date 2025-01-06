@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\GetListInterface" type="Maginium\CustomerApi\Actions\GetList" />
+
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\SearchInterface" type="Maginium\CustomerApi\Actions\Search" />
+
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\GetByInterface" type="Maginium\CustomerApi\Actions\GetBy" />
+
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\GetByIdInterface" type="Maginium\CustomerApi\Actions\GetById" />
+
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\CreateInterface" type="Maginium\CustomerApi\Actions\Save" />
+
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\UpdateInterface" type="Maginium\CustomerApi\Actions\Update" />
+
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\UpsertInterface" type="Maginium\CustomerApi\Actions\Upsert" />
+
+    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
+    <preference for="Maginium\CustomerApi\Interfaces\DeleteInterface" type="Maginium\CustomerApi\Actions\DeleteById" />
+</config>

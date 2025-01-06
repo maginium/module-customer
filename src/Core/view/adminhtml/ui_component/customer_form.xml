@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Define fieldset for customer -->
+    <fieldset name="customer">
+        <!-- Define field for country ID -->
+        <field component="Magento_Customer/js/form/element/country" name="country_id">
+            <argument xsi:type="array" name="data">
+                <!-- Provide options for the country field -->
+                <item xsi:type="object" name="options">Magento\Customer\Model\ResourceModel\Address\Attribute\Source\Country</item>
+                <!-- Configure field properties -->
+                <item xsi:type="array" name="config">
+                    <item xsi:type="string" name="label" translate="true">Country</item>
+                    <item xsi:type="string" name="dataType">text</item>
+                    <item xsi:type="string" name="formElement">select</item>
+                    <item xsi:type="boolean" name="visible">true</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

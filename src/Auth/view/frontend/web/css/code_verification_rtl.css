@@ -1,0 +1,18 @@
+.wrapper {
+  direction: rtl;
+  text-align: right;
+}
+.welcome-header {
+  display: none;
+}
+.maginium-mail-link:hover {
+  color: #3a8dfe !important;
+}
+table tbody tr a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+table tbody tr a:visited {
+  color: inherit !important;
+  text-decoration: none !important;
+}

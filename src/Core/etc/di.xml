@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define a preference for the Customer, specifying the custom Customer class implementation. -->
+    <preference for="Magento\Customer\Model\Customer" type="Maginium\Customer\Models\Customer" />
+
+    <!-- Define a preference for the CustomerRegistry, specifying the custom CustomerRegistry class implementation. -->
+    <preference for="Magento\Customer\Model\CustomerRegistry" type="Maginium\Customer\Models\CustomerRegistry" />
+
+    <!-- Define a preference for the CustomerInterface, specifying the custom Customer class implementation. -->
+    <preference for="Maginium\Customer\Interfaces\Data\CustomerInterface" type="Maginium\Customer\Models\Customer" />
+
+    <!-- Define a preference for the CustomerInterface, specifying the custom Customer class implementation. -->
+    <preference for="Maginium\Customer\Interfaces\Data\CustomerInterface" type="Maginium\Customer\Models\Customer" />
+
+    <!-- Define a preference for the CustomerRepositoryInterface, specifying the custom CustomerRepository class implementation. -->
+    <preference
+        for="Maginium\Customer\Interfaces\Repositories\CustomerRepositoryInterface"
+        type="Maginium\Customer\Repositories\CustomerRepository"
+    />
+
+    <!-- Define a preference for the CustomerServiceInterface, specifying the custom CustomerService class implementation. -->
+    <preference for="Maginium\Customer\Interfaces\Services\CustomerServiceInterface" type="Maginium\Customer\Services\CustomerService" />
+
+    <!-- Define metadata for the CustomerInterface model -->
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument xsi:type="array" name="metadata">
+                <item xsi:type="array" name="Maginium\Customer\Interfaces\Data\CustomerInterface">
+                    <item xsi:type="const" name="entityTableName">Maginium\Customer\Interfaces\Data\CustomerInterface::TABLE_NAME</item>
+                    <item xsi:type="const" name="identifierField">Maginium\Customer\Interfaces\Data\CustomerInterface::ID</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Define a hydrator for the CustomerInterface model -->
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument xsi:type="array" name="hydrators">
+                <item
+                    xsi:type="string"
+                    name="Maginium\Customer\Interfaces\Data\CustomerInterface"
+                >Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Datasources resolver -->
+    <type name="Maginium\Customer\Models\Customer">
+        <plugin name="customer_model_resolver" sortOrder="1" type="Maginium\Customer\Models\DataSourceResolver" />
+    </type>
+
+    <virtualType name="Maginium\Customer\Models\DataSourceResolver" type="Maginium\Framework\Database\DataSourceResolver" />
+</config>
