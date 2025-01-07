@@ -26,7 +26,7 @@ use Maginium\Framework\Support\Facades\Defer;
 use Maginium\Framework\Support\Facades\Escaper;
 use Maginium\Framework\Support\Facades\Event;
 use Maginium\Framework\Support\Facades\Log;
-use Maginium\Framework\Token\Facades\CustomerTokenService;
+use Maginium\Framework\Support\Facades\Token;
 
 /**
  * Class AbstractStrategy.
@@ -258,7 +258,7 @@ abstract class AbstractStrategy
     {
         // Create and return a customer-specific token.
         return [
-            LoginInterface::TOKEN => CustomerTokenService::create((int)$customer->getId()),
+            LoginInterface::TOKEN => Token::customer()->create((int)$customer->getId()),
         ];
     }
 

@@ -6,7 +6,7 @@ namespace Maginium\Customer\Models\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 use Maginium\Customer\Enums\ColorPreferences;
-use Maginium\Foundation\Abstracts\AbstractSource;
+use Maginium\Foundation\Abstracts\AbstractAttributeSource;
 
 /**
  * Class ColorPreference.
@@ -14,7 +14,7 @@ use Maginium\Foundation\Abstracts\AbstractSource;
  * Implements specific input type options for date of birth (DOB) configuration.
  * Inherits base behavior from AbstractOptionSource.
  */
-class ColorPreference extends AbstractSource implements OptionSourceInterface
+class ColorPreference extends AbstractAttributeSource implements OptionSourceInterface
 {
     /**
      * Retrieve options in a "key-value" format.

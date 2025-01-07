@@ -9,7 +9,7 @@ use Maginium\Customer\Models\Attributes\CustomerAttributes;
 use Maginium\CustomerElasticIndexer\Models\Scopes\CustomerScopes;
 use Maginium\Foundation\Enums\DataType;
 use Maginium\Framework\Database\EloquentModel;
-use Maginium\Framework\Database\Enums\Searcher;
+use Maginium\Framework\Database\Enums\SearcherEngines;
 use Maginium\Framework\Elasticsearch\Eloquent\Model;
 
 /**
@@ -32,7 +32,7 @@ class Customer extends Model implements CustomerInterface
      *
      * @var string
      */
-    protected $connection = Searcher::ELASTIC_SEARCH;
+    protected $connection = SearcherEngines::ELASTIC_SEARCH;
 
     /**
      * Elasticsearch index name.

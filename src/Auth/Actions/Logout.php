@@ -10,9 +10,8 @@ use Maginium\CustomerAuth\Interfaces\LogoutInterface;
 use Maginium\Foundation\Enums\HttpStatusCode;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Framework\Actions\Concerns\AsAction;
-use Maginium\Framework\Crud\Concerns\HasAuthorization;
 use Maginium\Framework\Support\Facades\Log;
-use Maginium\Framework\Token\Facades\CustomerTokenService;
+use Maginium\Framework\Support\Facades\Token;
 
 /**
  * Class Logout.
@@ -21,7 +20,6 @@ class Logout implements LogoutInterface
 {
     // Using the AsAction trait to add common action functionality
     use AsAction;
-    use HasAuthorization;
 
     /**
      * Constructor to initialize dependencies for the Logout action.
@@ -53,7 +51,7 @@ class Logout implements LogoutInterface
             CustomerSession::logout();
 
             // Revoke the customer's access token.
-            CustomerTokenService::revoke($customerId);
+            Token::customer()->revoke($customerId);
 
             // Set last login customer id
             CustomerSession::setLastCustomerId($customerId);

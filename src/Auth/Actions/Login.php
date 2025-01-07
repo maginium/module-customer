@@ -9,9 +9,6 @@ use Maginium\CustomerAuth\Enums\Strategies;
 use Maginium\CustomerAuth\Interfaces\LoginInterface;
 use Maginium\CustomerAuth\Strategies\Email;
 use Maginium\CustomerAuth\Strategies\Phone;
-use Maginium\CustomerMagicLinkAuth\Strategies\MagicLink;
-use Maginium\CustomerSocialLoginAuth\Strategies\Apple;
-use Maginium\CustomerSocialLoginAuth\Strategies\Google;
 use Maginium\Foundation\Exceptions\BadRequestException;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Foundation\Exceptions\NotFoundException;
@@ -85,15 +82,6 @@ class Login implements LoginInterface
 
             // If the strategy is PHONE, call the Phone strategy's run method
             Strategies::PHONE => Phone::run($data),
-
-            // If the strategy is GOOGLE, call the Google strategy's run method
-            Strategies::GOOGLE => Google::run($data),
-
-            // If the strategy is APPLE, call the Apple strategy's run method
-            Strategies::APPLE => Apple::run($data),
-
-            // If the strategy is MAGIC_LINK, call the MagicLink strategy's run method
-            Strategies::MAGIC_LINK => MagicLink::run($data),
 
             // If the strategy is not recognized, throw a BadRequestException
             // with a message indicating that the strategy is unsupported

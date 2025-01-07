@@ -8,7 +8,6 @@ use Maginium\Framework\Database\Enums\AttributeInputType;
 use Maginium\Framework\Database\Facades\CustomerAttribute;
 use Maginium\Framework\Database\Schema\AttributeBlueprint;
 use Maginium\Framework\Database\Setup\Migration\Attribute\Migration;
-use Maginium\Framework\Support\Debug\ConsoleOutput;
 use Maginium\Framework\Support\Facades\AttributeSchema;
 
 /**
@@ -70,9 +69,6 @@ class CustomerMobileNumberAttribute extends Migration
     {
         // Create the attribute with the specified schema
         AttributeSchema::create(static::$attribute, function(AttributeBlueprint $attribute): void {
-            // Log the start of the migration
-            ConsoleOutput::info('🔨 Starting migration for attribute: "' . static::$attribute . '"...', false);
-
             $attribute->asVarchar()
                 // Set the attribute model type
                 ->for(CustomerAttribute::ENTITY_TYPE)
@@ -88,6 +84,7 @@ class CustomerMobileNumberAttribute extends Migration
                 ->system(false) // Set as non-system attribute, allowing user modification
                 ->visible(true) // Make the attribute visible in forms
                 ->required(false) // Not mandatory; customers can leave it blank
+                ->userDefined(true) // Make the attribute definded by user
 
                 // Set options specific to grid views
                 ->usedInGrid(true) // Enable use of this attribute in admin grid views

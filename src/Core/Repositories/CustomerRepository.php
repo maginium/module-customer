@@ -29,7 +29,7 @@ use Maginium\Framework\Support\Validator;
  *
  * This class extends the base `CustomerRepository` and implements custom functionality for handling customers.
  */
-class CustomerRepository /* extends Repository */ implements CustomerRepositoryInterface
+class CustomerRepository extends Repository implements CustomerRepositoryInterface
 {
     /**
      * Event triggered when a customer successfully registers.
@@ -53,7 +53,7 @@ class CustomerRepository /* extends Repository */ implements CustomerRepositoryI
         CustomerCollectionFactory $collection,
         AccountManagementInterface $accountManagement,
     ) {
-        // parent::__construct($model, $collection);
+        parent::__construct($model, $collection);
 
         $this->accountManagement = $accountManagement;
     }

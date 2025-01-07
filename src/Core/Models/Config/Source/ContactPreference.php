@@ -6,7 +6,7 @@ namespace Maginium\Customer\Models\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 use Maginium\Customer\Enums\ContactPreferences;
-use Maginium\Foundation\Abstracts\AbstractSource;
+use Maginium\Foundation\Abstracts\AbstractAttributeSource;
 
 /**
  * Class ContactPreference.
@@ -14,7 +14,7 @@ use Maginium\Foundation\Abstracts\AbstractSource;
  * Implements specific input type options for date of birth (DOB) configuration.
  * Inherits base behavior from AbstractOptionSource.
  */
-class ContactPreference extends AbstractSource implements OptionSourceInterface
+class ContactPreference extends AbstractAttributeSource implements OptionSourceInterface
 {
     /**
      * Retrieve options in a "key-value" format.

@@ -9,7 +9,6 @@ use Maginium\Framework\Database\Enums\AttributeInputType;
 use Maginium\Framework\Database\Facades\CustomerAttribute;
 use Maginium\Framework\Database\Schema\AttributeBlueprint;
 use Maginium\Framework\Database\Setup\Migration\Attribute\Migration;
-use Maginium\Framework\Support\Debug\ConsoleOutput;
 use Maginium\Framework\Support\Facades\AttributeSchema;
 
 /**
@@ -72,9 +71,6 @@ class CustomerColorPreferenceAttribute extends Migration
     {
         // Create the attribute with the specified schema
         AttributeSchema::create(static::$attribute, function(AttributeBlueprint $attribute): void {
-            // Log the start of the migration
-            ConsoleOutput::info('🔨 Starting migration for attribute: "' . static::$attribute . '"...', false);
-
             $attribute->asVarchar()
                 // Set the attribute model type
                 ->for(CustomerAttribute::ENTITY_TYPE)
@@ -86,19 +82,20 @@ class CustomerColorPreferenceAttribute extends Migration
                 ->label(self::ATTRIBUTE_LABEL)
 
                 // Set various options for attribute behavior
-                ->required(false)// Not mandatory; customers can leave it blank
-                ->system(false)// Set as non-system attribute, allowing user modification
-                ->visible(true)// Make the attribute visible in forms
-                ->unique(false)// Not unique across customers
+                ->required(false) // Not mandatory; customers can leave it blank
+                ->system(false) // Set as non-system attribute, allowing user modification
+                ->visible(true) // Make the attribute visible in forms
+                ->unique(false) // Not unique across customers
+                ->userDefined(true) // Make the attribute definded by user
 
                 // Set options specific to grid views
-                ->usedInGrid(true)// Enable use of this attribute in admin grid views
-                ->visibleInGrid(true)// Make the attribute visible in grid views
-                ->filterableInGrid(true)// Allow filtering by this attribute in grids
-                ->searchableInGrid(true)// Enable search by this attribute in grids
+                ->usedInGrid(true) // Enable use of this attribute in admin grid views
+                ->visibleInGrid(true) // Make the attribute visible in grid views
+                ->filterableInGrid(true) // Allow filtering by this attribute in grids
+                ->searchableInGrid(true) // Enable search by this attribute in grids
 
                 // Set the default value
-                ->default(self::ATTRIBUTE_DEFAULT_VALUE)
+                ->defaultValue(self::ATTRIBUTE_DEFAULT_VALUE)
 
                  // Set display properties such as position and sort order in forms
                 ->position(self::ATTRIBUTE_POSITION)

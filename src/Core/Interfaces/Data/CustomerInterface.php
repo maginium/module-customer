@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Maginium\Customer\Interfaces\Data;
 
-use DateTimeInterface;
 // use Maginium\Framework\Database\Interfaces\HasCustomerGroupsInterface;
 use Maginium\Framework\Database\Interfaces\Data\ModelInterface;
 use Maginium\Framework\Database\Interfaces\HasLocalePreference;
@@ -17,54 +16,8 @@ use Maginium\Framework\Database\Interfaces\HasLocalePreference;
  * This interface defines constants used for interacting with the customer model in the Maginium module.
  * It includes table name, event prefix, and field identifiers that are commonly used across models and other parts
  * of the application related to the customer data.
- *
- * @method int getId() Get the customer ID.
- * @method void setId(int $id) Set the customer ID.
- * @method int getGroupId() Get the customer group ID.
- * @method void setGroupId(int $groupId) Set the customer group ID.
- * @method string getDefaultBilling() Get the default billing address.
- * @method void setDefaultBilling(string $defaultBilling) Set the default billing address.
- * @method string getDefaultShipping() Get the default shipping address.
- * @method void setDefaultShipping(string $defaultShipping) Set the default shipping address.
- * @method string getConfirmation() Get the confirmation status.
- * @method void setConfirmation(string $confirmation) Set the confirmation status.
- * @method string getCreatedAt() Get the creation timestamp of the customer.
- * @method void setCreatedAt(string $createdAt) Set the creation timestamp of the customer.
- * @method string getUpdatedAt() Get the last update timestamp of the customer.
- * @method void setUpdatedAt(string $updatedAt) Set the last update timestamp of the customer.
- * @method string getCreatedIn() Get the store where the customer was created.
- * @method void setCreatedIn(string $createdIn) Set the store where the customer was created.
- * @method string getDob() Get the customer's date of birth.
- * @method void setDob(string $dob) Set the customer's date of birth.
- * @method string getEmail() Get the customer's email address.
- * @method void setEmail(string $email) Set the customer's email address.
- * @method string getFirstname() Get the customer's first name.
- * @method void setFirstname(string $firstname) Set the customer's first name.
- * @method string getLastname() Get the customer's last name.
- * @method void setLastname(string $lastname) Set the customer's last name.
- * @method string getMiddlename() Get the customer's middle name.
- * @method void setMiddlename(string $middlename) Set the customer's middle name.
- * @method string getPrefix() Get the customer's prefix (e.g., Mr., Mrs.).
- * @method void setPrefix(string $prefix) Set the customer's prefix.
- * @method string getSuffix() Get the customer's suffix (e.g., Jr., Sr.).
- * @method void setSuffix(string $suffix) Set the customer's suffix.
- * @method string getGender() Get the customer's gender.
- * @method void setGender(string $gender) Set the customer's gender.
- * @method int getStoreId() Get the customer's store ID.
- * @method void setStoreId(int $storeId) Set the customer's store ID.
- * @method string getTaxvat() Get the customer's tax VAT number.
- * @method void setTaxvat(string $taxvat) Set the customer's tax VAT number.
- * @method int getWebsiteId() Get the customer's website ID.
- * @method void setWebsiteId(int $websiteId) Set the customer's website ID.
- * @method array getAddresses() Get the list of the customer's addresses.
- * @method void setAddresses(array $addresses = null) Set the list of the customer's addresses.
- * @method bool getDisableAutoGroupChange() Get whether auto group change is disabled.
- * @method void setDisableAutoGroupChange(bool $disableAutoGroupChange) Set whether auto group change is disabled.
- * @method \Magento\Customer\Api\Data\CustomerExtensionInterface getExtensionAttributes() Get the customer's extension attributes.
- * @method void setExtensionAttributes(\Magento\Customer\Api\Data\CustomerExtensionInterface $extensionAttributes) Set the customer's extension attributes.
- * @method DateTimeInterface|null getRpTokenCreatedAt() Retrieve the creation timestamp of the customer's reset password token.
  */
-interface CustomerInterface extends /* HasCustomerGroupsInterface, */ HasLocalePreference, /* HasMetadataInterface, */ ModelInterface
+interface CustomerInterface extends /* HasCustomerGroupsInterface, HasLocalePreference, /* HasMetadataInterface, */ ModelInterface
 {
     /**
      * Entity table_name identifier.
