@@ -127,7 +127,7 @@ class Customer extends BaseCustomer implements CustomerInterface, SearchableInte
             'birthdate' => $this->getDateOfBirth(),
             'gender' => $this->getGender(),
             'locale' => $this->preferredLocale(),
-            'avatar' => $this->getAvatar(),
+            // 'avatar' => $this->getAvatar(),
             'status' => $this->getStatus(),
             'is_locked' => $this->isLocked(),
             'last_login_at' => $this->getLastActivity(),

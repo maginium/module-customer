@@ -47,8 +47,7 @@
 
     <!-- Datasources resolver -->
     <type name="Maginium\Customer\Models\Customer">
-        <plugin name="customer_model_resolver" sortOrder="1" type="Maginium\Customer\Models\DataSourceResolver" />
+        <!-- Attach the data source resolver plugin to the Customer model -->
+        <plugin name="customer_model_resolver" sortOrder="1" type="Maginium\Framework\Database\Datasource\Resolver" />
     </type>
-
-    <virtualType name="Maginium\Customer\Models\DataSourceResolver" type="Maginium\Framework\Database\DataSourceResolver" />
 </config>

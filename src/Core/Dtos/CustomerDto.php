@@ -28,7 +28,7 @@ class CustomerDto extends DataTransferObject
      */
     #[Required]
     #[Integer]
-    #[MapFrom('model_id')]
+    #[MapFrom('entity_id')]
     public ?int $id;
 
     /**

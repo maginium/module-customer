@@ -34,7 +34,7 @@ trait GeneralScopes
     public function scopeFindById(int $customerId): ?AbstractCollection
     {
         return $this->getCollection()
-            ->addFieldToFilter('model_id', ['eq' => $customerId])
+            ->addFieldToFilter('entity_id', ['eq' => $customerId])
             ->addAttributeToSelect('*');
     }
 

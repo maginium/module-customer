@@ -20,7 +20,7 @@ use Maginium\Framework\Elasticsearch\Eloquent\Model;
  *
  * @mixin EloquentModel
  */
-class Customer extends Model implements CustomerInterface
+class Customer extends Model
 {
     // Trait for handling attributes
     use CustomerAttributes;
@@ -39,14 +39,14 @@ class Customer extends Model implements CustomerInterface
      *
      * @var string
      */
-    protected $index = self::TABLE_NAME;
+    protected $index = CustomerInterface::TABLE_NAME;
 
     /**
      * Primary key for the Customer model.
      *
      * @var string
      */
-    protected $primaryKey = self::ID;
+    protected $primaryKey = CustomerInterface::ID;
 
     /**
      * The "type" of the primary key ID.
