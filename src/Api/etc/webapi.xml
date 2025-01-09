@@ -50,7 +50,7 @@
         <service class="Maginium\CustomerApi\Interfaces\CreateInterface" method="handle" />
         <resources>
             <!-- Require admin access for this API endpoint -->
-            <resource ref="anonymous" />
+            <resource ref="Magento_Customer::manage" />
         </resources>
     </route>
 
@@ -59,7 +59,7 @@
         <service class="Maginium\CustomerApi\Interfaces\UpdateInterface" method="handle" />
         <resources>
             <!-- Require admin access for this API endpoint -->
-            <resource ref="anonymous" />
+            <resource ref="Magento_Customer::manage" />
         </resources>
     </route>
 
@@ -68,7 +68,7 @@
         <service class="Maginium\CustomerApi\Interfaces\UpsertInterface" method="handle" />
         <resources>
             <!-- Require admin access for this API endpoint -->
-            <resource ref="anonymous" />
+            <resource ref="Magento_Customer::manage" />
         </resources>
     </route>
 
@@ -77,7 +77,7 @@
         <service class="Maginium\CustomerApi\Interfaces\DeleteInterface" method="handle" />
         <resources>
             <!-- Require admin access for this API endpoint -->
-            <resource ref="anonymous" />
+            <resource ref="Magento_Customer::manage" />
         </resources>
     </route>
 </routes>
