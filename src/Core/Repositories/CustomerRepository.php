@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Maginium\Customer\Repositories;
 
-use Exception;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Model\ResourceModel\Customer\CollectionFactory as CustomerCollectionFactory;
-// use Magento\Customer\Api\Data\CustomerInterfaceFactory as ModelFactory;
 use Magento\Framework\Exception\NoSuchEntityException;
+// use Magento\Customer\Api\Data\CustomerInterfaceFactory as ModelFactory;
 use Maginium\Customer\Facades\CustomerRegistry;
 use Maginium\Customer\Facades\CustomerSession;
 use Maginium\Customer\Interfaces\Data\CustomerInterface;
@@ -16,6 +15,7 @@ use Maginium\Customer\Interfaces\Data\CustomerInterfaceFactory as ModelFactory;
 use Maginium\Customer\Interfaces\Repositories\CustomerRepositoryInterface;
 use Maginium\Customer\Models\Customer;
 use Maginium\Foundation\Exceptions\AuthenticationException;
+use Maginium\Foundation\Exceptions\Exception;
 use Maginium\Foundation\Exceptions\InvalidArgumentException;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Foundation\Exceptions\NotFoundException;
@@ -29,7 +29,7 @@ use Maginium\Framework\Support\Validator;
  *
  * This class extends the base `CustomerRepository` and implements custom functionality for handling customers.
  */
-class CustomerRepository extends Repository implements CustomerRepositoryInterface
+class CustomerRepository // extends Repository implements CustomerRepositoryInterface
 {
     /**
      * Event triggered when a customer successfully registers.
@@ -53,7 +53,7 @@ class CustomerRepository extends Repository implements CustomerRepositoryInterfa
         CustomerCollectionFactory $collection,
         AccountManagementInterface $accountManagement,
     ) {
-        parent::__construct($model, $collection);
+        // parent::__construct($model, $collection);
 
         $this->accountManagement = $accountManagement;
     }

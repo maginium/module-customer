@@ -8,7 +8,6 @@ use Maginium\Customer\Interfaces\Data\CustomerInterface;
 use Maginium\Customer\Models\Attributes\CustomerAttributes;
 use Maginium\CustomerElasticIndexer\Models\Scopes\CustomerScopes;
 use Maginium\Foundation\Enums\DataType;
-use Maginium\Framework\Database\EloquentModel;
 use Maginium\Framework\Database\Enums\SearcherEngines;
 use Maginium\Framework\Elasticsearch\Eloquent\Model;
 
@@ -18,7 +17,7 @@ use Maginium\Framework\Elasticsearch\Eloquent\Model;
  * Represents the Customer model with attributes and relationships mapped
  * to the `customers` table and Elasticsearch for indexing purposes.
  *
- * @mixin EloquentModel
+ * @mixin Model
  */
 class Customer extends Model
 {

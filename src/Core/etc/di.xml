@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Define a preference for the Customer, specifying the custom Customer class implementation. -->
-    <preference for="Magento\Customer\Model\Customer" type="Maginium\Customer\Models\Customer" />
+    <!-- <preference for="Magento\Customer\Model\Customer" type="Maginium\Customer\Models\Customer" /> -->
 
     <!-- Define a preference for the CustomerRegistry, specifying the custom CustomerRegistry class implementation. -->
     <preference for="Magento\Customer\Model\CustomerRegistry" type="Maginium\Customer\Models\CustomerRegistry" />

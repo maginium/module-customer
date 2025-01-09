@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerAuth\Actions;
 
-use Exception;
 use Magento\Customer\Api\AccountManagementInterface;
 use Maginium\Checkout\Facades\CheckoutSession;
 use Maginium\Customer\Facades\AccountManagement;
@@ -16,6 +15,7 @@ use Maginium\Customer\Models\Customer;
 use Maginium\CustomerAuth\Dtos\RegisterDto;
 use Maginium\CustomerAuth\Interfaces\RegisterInterface;
 use Maginium\Foundation\Enums\HttpStatusCode;
+use Maginium\Foundation\Exceptions\Exception;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Framework\Actions\Concerns\AsAction;
 use Maginium\Framework\Support\Arr;

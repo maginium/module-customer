@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerAuth\Actions;
 
-use Exception;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Model\AccountManagement;
 use Magento\Framework\Exception\SecurityViolationException;
@@ -12,6 +11,7 @@ use Magento\Framework\Phrase;
 use Maginium\Customer\Facades\CustomerSession;
 use Maginium\CustomerAuth\Interfaces\ForgetPasswordInterface;
 use Maginium\Foundation\Enums\HttpStatusCode;
+use Maginium\Foundation\Exceptions\Exception;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Foundation\Exceptions\NoSuchEntityException;
 use Maginium\Framework\Actions\Concerns\AsAction;

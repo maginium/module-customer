@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerAuth\Actions;
 
-use Exception;
 use Magento\Store\Model\App\Emulation;
 use Magento\Store\Model\Store;
 use Maginium\Customer\Interfaces\Services\CustomerServiceInterface;
 use Maginium\CustomerAuth\Interfaces\CheckInterface;
 use Maginium\Foundation\Enums\HttpStatusCode;
+use Maginium\Foundation\Exceptions\Exception;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Foundation\Exceptions\NotFoundException;
 use Maginium\Framework\Actions\Concerns\AsAction;

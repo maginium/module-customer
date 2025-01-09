@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerAuth\Interfaces;
 
-use Exception;
 use Maginium\CustomerAuth\Dtos\UpdateDto;
+use Maginium\Foundation\Exceptions\Exception;
 
 /**
  * Interface UpdateInterface.

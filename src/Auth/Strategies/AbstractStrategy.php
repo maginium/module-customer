@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerAuth\Strategies;
 
-use Exception;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\Exception\EmailNotConfirmedException;
 use Magento\Integration\Model\Oauth\Token\RequestThrottler;
@@ -18,6 +17,7 @@ use Maginium\CustomerAuth\Dtos\LoginDto;
 use Maginium\CustomerAuth\Interfaces\LoginInterface;
 use Maginium\Foundation\Enums\HttpStatusCode;
 use Maginium\Foundation\Exceptions\AuthenticationException;
+use Maginium\Foundation\Exceptions\Exception;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Foundation\Exceptions\NotFoundException;
 use Maginium\Framework\Actions\Concerns\AsAction;

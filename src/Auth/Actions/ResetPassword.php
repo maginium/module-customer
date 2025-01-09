@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerAuth\Actions;
 
-use Exception;
 use Magento\Customer\Model\Customer\CredentialsValidator;
 use Maginium\Customer\Facades\AccountManagement;
 use Maginium\Customer\Facades\CustomerRegistry;
@@ -13,6 +12,7 @@ use Maginium\Customer\Interfaces\Data\CustomerInterface;
 use Maginium\Customer\Interfaces\Services\CustomerServiceInterface;
 use Maginium\CustomerAuth\Interfaces\ResetPasswordInterface;
 use Maginium\Foundation\Enums\HttpStatusCode;
+use Maginium\Foundation\Exceptions\Exception;
 use Maginium\Foundation\Exceptions\InputException;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Framework\Actions\Concerns\AsAction;

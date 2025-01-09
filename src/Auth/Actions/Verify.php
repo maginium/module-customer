@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerAuth\Actions;
 
-use Exception;
 use Maginium\Customer\Facades\CustomerRegistry;
 use Maginium\Customer\Models\Customer;
 use Maginium\CustomerAuth\Enums\Strategies;
 use Maginium\CustomerAuth\Helpers\Data as CustomerAuthHelper;
 use Maginium\CustomerAuth\Interfaces\VerifyInterface;
 use Maginium\Foundation\Enums\HttpStatusCode;
+use Maginium\Foundation\Exceptions\Exception;
 use Maginium\Foundation\Exceptions\LocalizedException;
 use Maginium\Foundation\Exceptions\NotFoundException;
 use Maginium\Framework\Actions\Concerns\AsAction;
