@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Section: Customer List -->
+    <!-- Description: Routes for retrieving lists of customers with optional pagination and search. -->
+
+    <!-- Route for retrieving a list of customers -->
+    <route method="GET" url="/V2/customers">
+        <service class="Maginium\CustomerApi\Interfaces\GetListInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for searching customers -->
+    <route method="GET" url="/V2/customers/search/:searchTerm">
+        <service class="Maginium\CustomerApi\Interfaces\SearchInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Section: Customer Retrieval -->
+    <!-- Description: Routes for retrieving individual customers by ID or other identifiers. -->
+
+    <!-- Route for retrieving a customer by Identifier -->
+    <route method="GET" url="/V2/customer/attribute/:id/:value">
+        <service class="Maginium\CustomerApi\Interfaces\GetByInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for retrieving a customer by ID -->
+    <route method="GET" url="/V2/customer/:id">
+        <service class="Maginium\CustomerApi\Interfaces\GetByIdInterface" method="handle" />
+        <resources>
+            <!-- Allow anonymous access to this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Section: Customer Modification -->
+    <!-- Description: Routes for creating, updating, upserting, and deleting customers. -->
+
+    <!-- Route for saving a customer -->
+    <route method="POST" url="/V2/customer">
+        <service class="Maginium\CustomerApi\Interfaces\CreateInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for updating a customer -->
+    <route method="PUT" url="/V2/customer/:id">
+        <service class="Maginium\CustomerApi\Interfaces\UpdateInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for upserting a customer -->
+    <route method="POST" url="/V2/customers/upsert">
+        <service class="Maginium\CustomerApi\Interfaces\UpsertInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <!-- Route for deleting a customer -->
+    <route method="DELETE" url="/V2/customer/:id">
+        <service class="Maginium\CustomerApi\Interfaces\DeleteInterface" method="handle" />
+        <resources>
+            <!-- Require admin access for this API endpoint -->
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>
