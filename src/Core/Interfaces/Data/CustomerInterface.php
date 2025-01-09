@@ -56,11 +56,6 @@ interface CustomerInterface extends HasLocalePreference, ModelInterface
     public const MOBILE_NUMBER = 'mobile_number';
 
     /**
-     * Column 'lock_expires' for the customer.
-     */
-    public const LOCK_EXPIRES = 'lock_expires';
-
-    /**
      * Label constant.
      */
     public const LABEL = 'label';
@@ -74,13 +69,6 @@ interface CustomerInterface extends HasLocalePreference, ModelInterface
      * Constant representing "Not Specified".
      */
     public const NOT_SPECIFIED = 'Not Specified';
-
-    /**
-     * Constant for IS_ACTIVE.
-     *
-     * Represents the status of the customer account. This constant is used for checking if a customer is active.
-     */
-    public const IS_ACTIVE = 'is_active';
 
     /**
      * Constant for CONFIRMATION.
@@ -207,6 +195,62 @@ interface CustomerInterface extends HasLocalePreference, ModelInterface
      * Represents whether auto group change is disabled for the customer.
      */
     public const DISABLE_AUTO_GROUP_CHANGE = 'disable_auto_group_change';
+
+    /**
+     * The constant representing the "is active" status.
+     *
+     * This constant can be used to refer to the `is_active` attribute in the model.
+     */
+    public const IS_ACTIVE = 'is_active';
+
+    /**
+     * The constant representing the "failures number".
+     *
+     * This constant can be used to refer to the `failures_num` attribute in the model.
+     */
+    public const FAILURES_NUM = 'failures_num';
+
+    /**
+     * The constant representing the "lock expiration" attribute.
+     *
+     * This constant can be used to refer to the `lock_expires` attribute in the model.
+     */
+    public const LOCK_EXPIRES = 'lock_expires';
+
+    /**
+     * The constant representing the "first failure" attribute.
+     *
+     * This constant can be used to refer to the `first_failure` attribute in the model.
+     */
+    public const FIRST_FAILURE = 'first_failure';
+
+    /**
+     * The constant representing the "reset password token creation timestamp".
+     *
+     * This constant can be used to refer to the `rp_token_created_at` attribute in the model.
+     */
+    public const RP_TOKEN_CREATED_AT = 'rp_token_created_at';
+
+    /**
+     * The constant representing the "reset password token" attribute.
+     *
+     * This constant can be used to refer to the `rp_token` attribute in the model.
+     */
+    public const RP_TOKEN = 'rp_token';
+
+    /**
+     * The constant representing the "incremental identifier" attribute.
+     *
+     * This constant can be used to refer to the `increment_id` attribute in the model.
+     */
+    public const INCREMENT_ID = 'increment_id';
+
+    /**
+     * The constant representing the "password hash" attribute.
+     *
+     * This constant can be used to refer to the `password_hash` attribute in the model.
+     */
+    public const PASSWORD_HASH = 'password_hash';
 
     /**
      * Get the formatted full name of the customer including prefix and suffix.

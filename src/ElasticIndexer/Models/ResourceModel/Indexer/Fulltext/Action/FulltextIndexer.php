@@ -9,7 +9,7 @@ use Magento\Customer\Model\ResourceModel\Customer\CollectionFactory;
 use Maginium\Customer\Interfaces\Data\CustomerInterfaceFactory as ModelFactory;
 use Maginium\Customer\Models\Customer;
 use Maginium\ElasticIndexer\Models\ResourceModel\Indexer\Fulltext\Action\AbstractResourceModel;
-use Maginium\Foundation\Enums\SortOrder;
+use Maginium\Foundation\Enums\SortCustomer;
 use Maginium\Framework\Support\Validator;
 
 /**
@@ -76,7 +76,7 @@ class FulltextIndexer extends AbstractResourceModel
 
         // Apply pagination and sorting.
         $collection->setPageSize($limit)
-            ->setOrder($this->getModel()->getKeyName(), SortOrder::ASC);
+            ->setCustomer($this->getModel()->getKeyName(), SortCustomer::ASC);
 
         // Initialize an array to hold the processed data.
         $documents = [];

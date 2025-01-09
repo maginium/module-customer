@@ -1,5 +1,20 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define a preference for the CustomerInterface, specifying the custom Customer class implementation. -->
+    <preference for="Maginium\CustomerElasticIndexer\Interfaces\Data\CustomerInterface" type="Maginium\CustomerElasticIndexer\Models\Customer" />
+
+    <!-- Define a preference for the CustomerRepositoryInterface, specifying the custom CustomerRepository class implementation. -->
+    <preference
+        for="Maginium\CustomerElasticIndexer\Interfaces\Repositories\CustomerRepositoryInterface"
+        type="Maginium\CustomerElasticIndexer\Repositories\CustomerRepository"
+    />
+
+    <!-- Define a preference for the CustomerServiceInterface, specifying the custom CustomerService class implementation. -->
+    <preference
+        for="Maginium\CustomerElasticIndexer\Interfaces\Services\CustomerServiceInterface"
+        type="Maginium\CustomerElasticIndexer\Services\CustomerService"
+    />
+
     <!-- Customizes the field mapping behavior for Elasticsearch. -->
     <type name="Magento\Elasticsearch\Model\Adapter\FieldMapperInterface">
         <arguments>

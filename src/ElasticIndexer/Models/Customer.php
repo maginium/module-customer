@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerElasticIndexer\Models;
 
-use Maginium\Customer\Interfaces\Data\CustomerInterface;
 use Maginium\Customer\Models\Attributes\CustomerAttributes;
+use Maginium\CustomerElasticIndexer\Interfaces\Data\CustomerInterface;
 use Maginium\CustomerElasticIndexer\Models\Scopes\CustomerScopes;
 use Maginium\Foundation\Enums\DataType;
 use Maginium\Framework\Database\Enums\SearcherEngines;
@@ -19,7 +19,7 @@ use Maginium\Framework\Elasticsearch\Eloquent\Model;
  *
  * @mixin Model
  */
-class Customer extends Model
+class Customer extends Model implements CustomerInterface
 {
     // Trait for handling attributes
     use CustomerAttributes;
@@ -55,6 +55,87 @@ class Customer extends Model
      * @var string
      */
     protected $keyType = DataType::INT;
+
+    /**
+     * The attributes that should be cast to specific data types.
+     *
+     * This array defines how the attributes should be automatically cast to the correct types when accessed.
+     * For example, 'int' ensures the attribute is cast to an integer.
+     *
+     * @var array
+     */
+    protected $casts = [
+        CustomerInterface::GENDER => DataType::INT,
+        CustomerInterface::GROUP_ID => DataType::INT,
+        CustomerInterface::STORE_ID => DataType::INT,
+        CustomerInterface::IS_ACTIVE => DataType::INT,
+        CustomerInterface::WEBSITE_ID => DataType::INT,
+        CustomerInterface::FAILURES_NUM => DataType::INT,
+        CustomerInterface::DEFAULT_BILLING => DataType::INT,
+        CustomerInterface::DEFAULT_SHIPPING => DataType::INT,
+        CustomerInterface::DISABLE_AUTO_GROUP_CHANGE => DataType::INT,
+    ];
+
+    /**
+     * The attributes that should be treated as dates.
+     *
+     * These attributes will be automatically cast to Carbon instances.
+     *
+     * @var array
+     */
+    protected $dates = [
+        CustomerInterface::DOB,
+        CustomerInterface::LOCK_EXPIRES,
+        CustomerInterface::FIRST_FAILURE,
+        CustomerInterface::RP_TOKEN_CREATED_AT,
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * This array defines which attributes should not be included when converting the model to an array or JSON.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        CustomerInterface::RP_TOKEN,
+    ];
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * This list defines the attributes that can be filled using mass-assignment, allowing attributes
+     * to be set directly through the model.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        CustomerInterface::DOB,
+        CustomerInterface::EMAIL,
+        CustomerInterface::PREFIX,
+        CustomerInterface::SUFFIX,
+        CustomerInterface::TAXVAT,
+        CustomerInterface::GENDER,
+        CustomerInterface::GROUP_ID,
+        CustomerInterface::STORE_ID,
+        CustomerInterface::LASTNAME,
+        CustomerInterface::RP_TOKEN,
+        CustomerInterface::IS_ACTIVE,
+        CustomerInterface::FIRSTNAME,
+        CustomerInterface::CREATED_IN,
+        CustomerInterface::MIDDLENAME,
+        CustomerInterface::WEBSITE_ID,
+        CustomerInterface::INCREMENT_ID,
+        CustomerInterface::CONFIRMATION,
+        CustomerInterface::FAILURES_NUM,
+        CustomerInterface::LOCK_EXPIRES,
+        CustomerInterface::PASSWORD_HASH,
+        CustomerInterface::FIRST_FAILURE,
+        CustomerInterface::DEFAULT_BILLING,
+        CustomerInterface::DEFAULT_SHIPPING,
+        CustomerInterface::RP_TOKEN_CREATED_AT,
+        CustomerInterface::DISABLE_AUTO_GROUP_CHANGE,
+    ];
 
     /**
      * Get the preferred locale of the model.
