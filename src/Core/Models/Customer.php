@@ -14,6 +14,8 @@ use Maginium\Customer\Models\Scopes\CustomerScopes;
 use Maginium\CustomerElasticIndexer\Models\Customer as ElasticModel;
 use Maginium\Foundation\Enums\DataType;
 use Maginium\Foundation\Enums\Locale;
+use Maginium\Framework\Crud\Traits\Filterable;
+use Maginium\Framework\Crud\Traits\Sortable;
 use Maginium\Framework\Database\Eloquent\Model;
 use Maginium\Framework\Database\Interfaces\SearchableInterface;
 use Maginium\Framework\Support\Facades\StoreManager;
@@ -35,6 +37,10 @@ class Customer extends Model implements CustomerInterface, SearchableInterface
     use CustomerAttributes;
     // Trait for handling scopes
     use CustomerScopes;
+    // Trait for handling filters
+    use Filterable;
+    // Trait for handling sorts
+    use Sortable;
 
     /**
      * The table associated with the model.

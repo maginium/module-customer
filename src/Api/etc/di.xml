@@ -19,8 +19,5 @@
     <preference for="Maginium\CustomerApi\Interfaces\UpdateInterface" type="Maginium\CustomerApi\Actions\Update" />
 
     <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
-    <preference for="Maginium\CustomerApi\Interfaces\UpsertInterface" type="Maginium\CustomerApi\Actions\Upsert" />
-
-    <!-- Set preference for CustomerServiceInterface to use CustomerService implementation -->
     <preference for="Maginium\CustomerApi\Interfaces\DeleteInterface" type="Maginium\CustomerApi\Actions\DeleteById" />
 </config>

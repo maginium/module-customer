@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerElasticIndexer\Services;
 
-use Maginium\Customer\Interfaces\Repositories\CustomerRepositoryInterface;
-use Maginium\Customer\Interfaces\Services\CustomerServiceInterface;
+use Maginium\CustomerElasticIndexer\Interfaces\Repositories\CustomerRepositoryInterface;
+use Maginium\CustomerElasticIndexer\Interfaces\Services\CustomerServiceInterface;
 use Maginium\Framework\Crud\Service;
 
 /**

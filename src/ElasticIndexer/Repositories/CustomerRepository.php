@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Maginium\CustomerElasticIndexer\Repositories;
 
-use Maginium\Customer\Interfaces\Repositories\CustomerRepositoryInterface;
 use Maginium\CustomerElasticIndexer\Interfaces\Data\CustomerInterface;
+use Maginium\Framework\Crud\Interfaces\Repositories\RepositoryInterface;
 use Maginium\Framework\Crud\Repository;
 
 /**
@@ -13,7 +13,7 @@ use Maginium\Framework\Crud\Repository;
  *
  * This class extends the base `CustomerRepository` and implements custom functionality for handling customers.
  */
-class CustomerRepository extends Repository implements CustomerRepositoryInterface
+class CustomerRepository extends Repository implements RepositoryInterface
 {
     /**
      * The repository identifier.
